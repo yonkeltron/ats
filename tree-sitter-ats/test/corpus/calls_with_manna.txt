@@ -1,0 +1,49 @@
+=============================================================
+Call built-in instruction with pos manna as the only argument
+=============================================================
+pnd[+M]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (pos_manna)))
+
+=============================================================
+Call built-in instruction with neg manna as the only argument
+=============================================================
+pnd[-M]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (neg_manna)))
+
+=============================================================
+Call built-in instruction with pos manna as the last argument
+=============================================================
+pnd[pref 1 2.3 +M]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (identifier)
+    args: (zint_literal)
+    args: (float_literal)
+    args: (pos_manna)))
+
+=============================================================
+Call built-in instruction with neg manna as the last argument
+=============================================================
+pnd[pref 1 2.3 -M]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (identifier)
+    args: (zint_literal)
+    args: (float_literal)
+    args: (neg_manna)))

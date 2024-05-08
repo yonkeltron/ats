@@ -1,0 +1,11 @@
+prefix=@PREFIX@
+libdir=@LIBDIR@
+includedir=@INCLUDEDIR@
+
+Name: tree-sitter-Adaptive_Thaumaturgical_Syntax
+Description: AdaptiveThaumaturgicalSyntax grammar for tree-sitter
+URL: @URL@
+Version: @VERSION@
+Requires: @REQUIRES@
+Libs: -L${libdir} @ADDITIONAL_LIBS@ -ltree-sitter-Adaptive_Thaumaturgical_Syntax
+Cflags: -I${includedir}

@@ -1,0 +1,14 @@
+defspell levitate/1 (target: Thing) {
+  mov[target, 0, 0, +M]
+}
+
+defspell sink/1 (target: Thing) {
+  mov[target, 0, 0, -M]
+}
+
+defspell float_to/4 (target: Thing, x: Zint, y: Zint) {
+  cst[levitate target]
+  mov[target, x, y, 0]
+  cst[sink target]
+}
+

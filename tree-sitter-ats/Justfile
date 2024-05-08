@@ -1,0 +1,6 @@
+default:
+  @just --choose --chooser=sk
+
+test:
+  tree-sitter generate
+  tree-sitter test

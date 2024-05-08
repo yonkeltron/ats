@@ -1,0 +1,9 @@
+======================================
+Call built-in instruction with no args
+======================================
+pnd[]
+---
+
+(source_file
+  (call
+    instruction: (instruction)))

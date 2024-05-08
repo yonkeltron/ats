@@ -1,0 +1,3 @@
+module spellgebra
+
+sig Spell {}

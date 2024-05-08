@@ -1,0 +1,62 @@
+==================================================
+Call built-in instruction with multiple Float args
+==================================================
+pnd[3.14 6.28]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (float_literal)
+    args: (float_literal)))
+
+=======================================================
+Call built-in instruction with multiple identifier args
+=======================================================
+pnd[q r]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (identifier)
+    args: (identifier)))
+
+===================================================
+Call built-in instruction with multiple String args
+===================================================
+pnd["bamboo" "curry"]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (string_literal)
+    args: (string_literal)))
+
+=================================================
+Call built-in instruction with multiple Zint args
+=================================================
+pnd[1 2]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (zint_literal)
+    args: (zint_literal)))
+
+=============================================================
+Call built-in instruction with multiple args of varying types
+=============================================================
+cst[panda 1 2.3 "4"]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (identifier)
+    args: (zint_literal)
+    args: (float_literal)
+    args: (string_literal)))
+

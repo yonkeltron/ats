@@ -1,0 +1,44 @@
+============================================
+Call built-in instruction with one Float arg
+============================================
+pnd[1.0]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (float_literal)))
+
+=================================================
+Call built-in instruction with one identifier arg
+=================================================
+pnd[q]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (identifier)))
+
+=============================================
+Call built-in instruction with one String arg
+=============================================
+pnd["bamboo"]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (string_literal)))
+
+===========================================
+Call built-in instruction with one Zint arg
+===========================================
+pnd[1]
+---
+
+(source_file
+  (call
+    instruction: (instruction)
+    args: (zint_literal)))
+
