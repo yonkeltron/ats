@@ -1,0 +1,3 @@
+defspell panda/1 (target: Thing) {
+  nop
+}

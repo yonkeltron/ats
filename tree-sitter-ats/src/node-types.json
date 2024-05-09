@@ -58,6 +58,45 @@
     }
   },
   {
+    "type": "formal_args_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "neg_manna",
+          "named": true
+        },
+        {
+          "type": "pos_manna",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "type_name",
+          "named": true
+        },
+        {
+          "type": "zint_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -66,10 +105,66 @@
       "required": true,
       "types": [
         {
-          "type": "call",
+          "type": "spell_def",
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "spell_def",
+    "named": true,
+    "fields": {
+      "instructions": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "call",
+            "named": true
+          }
+        ]
+      },
+      "spell_body": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "call",
+            "named": true
+          }
+        ]
+      },
+      "spell_formal_args_list": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "formal_args_list",
+            "named": true
+          }
+        ]
+      },
+      "spell_min_cost": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "zint_literal",
+            "named": true
+          }
+        ]
+      },
+      "spell_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -86,11 +181,35 @@
     "named": false
   },
   {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "defspell",
     "named": false
   },
   {
@@ -114,7 +233,19 @@
     "named": true
   },
   {
+    "type": "type_name",
+    "named": true
+  },
+  {
     "type": "zint_literal",
     "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
   }
 ]

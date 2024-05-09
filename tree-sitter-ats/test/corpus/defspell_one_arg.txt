@@ -1,0 +1,17 @@
+==================================================
+Single nop defspell with 1 manna a single argument
+==================================================
+defspell panda/1 (target: Thing) {
+  nop
+}
+---
+
+(source_file
+  (spell_def
+    spell_name: (identifier)
+    spell_min_cost: (zint_literal)
+    spell_formal_args_list: (param
+                        (identifier)
+                        (param_type))
+    spell_body: (call
+                  instruction: (instruction))))
