@@ -21,9 +21,9 @@ pub fn literal_value_parser() -> impl Parser<char, LiteralValue, Error = Simple<
     .map(|reunited| reunited.parse().expect("error parsing float"))
     .map(LiteralValue::Float);
 
-  let chars_parser = just('"')
-    .ignore_then(none_of('"').repeated())
-    .then_ignore(just('"'))
+  let chars_parser = none_of('"')
+    .repeated()
+    .delimited_by(just('"'), just('"'))
     .map(String::from_iter)
     .map(LiteralValue::Chars);
 

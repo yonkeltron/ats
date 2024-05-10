@@ -51,6 +51,8 @@ pub fn spell_parser() -> impl Parser<char, Spell, Error = Simple<char>> {
 
 #[cfg(test)]
 mod tests {
+  use crate::parser::literal_value::LiteralValue;
+
   use super::*;
   use pretty_assertions::assert_eq;
 
@@ -67,6 +69,32 @@ mod tests {
       min_manna_cost: 1,
       params: vec![],
       instruction_calls: vec![InstructionCall::new("nop", vec![])],
+    };
+
+    assert_eq!(actual, expected);
+  }
+
+  #[test]
+  fn test_parse_nop_spell_with_args() {
+    let input = "defspell levitate/1 (target: Thing) { mov[target 0 0 +M] }";
+
+    let actual = spell_parser()
+      .parse(input)
+      .expect("unable to parse spell in test");
+
+    let expected = Spell {
+      name: String::from("levitate"),
+      min_manna_cost: 1,
+      params: vec![FormalParameter::new("target", "Thing")],
+      instruction_calls: vec![InstructionCall::new(
+        "mov",
+        vec![
+          LiteralValue::Identifier(String::from("target")),
+          LiteralValue::Zint(0),
+          LiteralValue::Zint(0),
+          LiteralValue::MannaPos,
+        ],
+      )],
     };
 
     assert_eq!(actual, expected);

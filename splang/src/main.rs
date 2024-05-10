@@ -1,8 +1,8 @@
-use chumsky::Parser;
 use color_eyre::eyre::{eyre, Result};
 
-use std::fs;
 use std::path::PathBuf;
+
+use crate::parser::spellbook::Spellbook;
 
 mod cli;
 mod parser;
@@ -21,18 +21,10 @@ fn main() -> Result<()> {
 
       println!("Reading {}\n", file_path.display());
 
-      let src = fs::read_to_string(file_path)?;
-      println!("{}\n", src);
-      match parser::spell::spell_parser().parse(src) {
-        Ok(parsed) => {
-          println!("{:?}", parsed);
-          Ok(())
-        }
-        Err(error) => {
-          println!("{:?}", error);
-          Err(eyre!("{:?}", error))
-        }
-      }
+      let spellbook = Spellbook::new_from_file_path(file_path)?;
+      println!("{:#?}", spellbook);
+
+      Ok(())
     }
     Some((unknown, _matches)) => unreachable!("Unknown subcommmand: {unknown}"),
     None => unreachable!("Subcommand required"),
