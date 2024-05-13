@@ -3,6 +3,20 @@ use chumsky::prelude::*;
 use super::literal_value::{literal_value_parser, LiteralValue};
 
 #[derive(Clone, Debug, PartialEq)]
+pub enum Instruction {
+  Charge(String, usize),
+  Cast(String, Vec<LiteralValue>),
+  Damage(String, usize),
+  Drain(String, usize),
+  Fix(String, usize),
+  Illuminate(usize),
+  Invisible(String, usize),
+  Move(String, isize, isize, isize),
+  Snuff(usize),
+  Visible(String),
+}
+
+#[derive(Clone, Debug, PartialEq)]
 pub struct InstructionCall {
   instruction: String,
   args: Vec<LiteralValue>,

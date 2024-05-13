@@ -12,3 +12,27 @@ defspell float_to/4 (target: Thing, x: Zint, y: Zint) {
   cst[sink target]
 }
 
+defspell store_manna_in/1 (target: Thing) {
+  chr[target +M]
+}
+
+defspell drain_manna_from/1 (target: Thing) {
+  drg[target -M]
+}
+
+defspell cloak/1 (target: Thing) {
+  inv[target +M]
+}
+
+defspell reveal/1 (target: Thing) {
+  vis[target +M]
+}
+
+defspell heal/1 (target: Thing) {
+  fix[target +M]
+}
+
+defspell strobe/2 () {
+  ilm 1
+  drk 1
+}
